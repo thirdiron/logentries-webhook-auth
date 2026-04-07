@@ -11,7 +11,7 @@
     "removeComments": false,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "target": "es6",
+    "target": "es2024",
     "outDir": "build",
     "declaration": true
   },
