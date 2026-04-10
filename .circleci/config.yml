@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cimg/node:24
+      - image: thirdiron/tici:node-22-lts
     working_directory: ~/logentries-webhook-auth
     steps:
       - checkout
@@ -22,7 +22,7 @@ jobs:
 
   publish:
     docker:
-      - image: cimg/node:24
+      - image: thirdiron/tici:node-22-lts
     working_directory: ~/logentries-webhook-auth
     steps:
       - checkout
