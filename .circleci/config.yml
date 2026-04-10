@@ -3,10 +3,16 @@ package-cache: &package-cache
 
 version: 2
 
+tici-auth: &tici-auth
+  auth:
+    username: $DOCKER_USERNAME
+    password: $DOCKER_PASSWORD
+
 jobs:
   build:
     docker:
-      - image: thirdiron/tici:node-22-lts
+      - image: thirdiron/tici:node-24-lts
+       <<: *tici-auth
     working_directory: ~/logentries-webhook-auth
     steps:
       - checkout
@@ -22,7 +28,8 @@ jobs:
 
   publish:
     docker:
-      - image: thirdiron/tici:node-22-lts
+      - image: thirdiron/tici:node-24-lts
+       <<: *tici-auth
     working_directory: ~/logentries-webhook-auth
     steps:
       - checkout
