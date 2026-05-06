@@ -1,7 +1,7 @@
 package-cache: &package-cache
   key: npm-cache-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
 
-version: 2
+version: 2.1
 
 jobs:
   build:
@@ -38,7 +38,6 @@ jobs:
       - run: npm publish
 
 workflows:
-  version: 2
   build-and-publish:
     jobs:
       - build
